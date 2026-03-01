@@ -11,7 +11,9 @@ body {
   flex-wrap: wrap;
   gap: $gap;
 
-  width: ($day-size * $columns) + ($gap * ($columns - 1));
+  width: ($day-size * $columns) 
+    + ($gap * ($columns - 1))
+    + (padding-left + paddin-right);
 
   &__day {
     display: flex;
