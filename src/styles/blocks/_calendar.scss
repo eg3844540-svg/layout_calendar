@@ -13,7 +13,9 @@ body {
 
    box-sizing: border-box;
   
-   width: ($day-size * $columns) + ($gap * ($columns - 1));
+   width: ($day-size * $columns)
+     + ($gap * ($columns - 1))
+     + ($calendar-padding *2);
   
   &__day {
     display: flex;
