@@ -19,11 +19,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    
+     $gap: 1px;
+     $bordor-width: 1px;
+     $border-color: black;
 
-    width: $day-size;
-    height: $day-size;
-
-    border: 1px solid black;
+    border: $border-width solid $border-color;
     background-color: $day-color;
     font-family: $font-stack;
     font-size: 30px;
