@@ -1,34 +1,49 @@
-body {
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-}
-
 .calendar {
-  padding: 10px;
+  padding: $calendar-padding;
   display: flex;
   flex-wrap: wrap;
   gap: $gap;
 
-   box-sizing: border-box;
-  
-   width: ($day-size * $columns)
-     + ($gap * ($columns - 1))
-     + ($calendar-padding *2);
-  
+  box-sizing: border-box;
+
+  width: ($day-size * $columns)
+       + ($gap * ($columns - 1))
+       + ($calendar-padding * 2);
+
+  overflow: visible;
+
   &__day {
+    position: relative;
+
     display: flex;
     justify-content: center;
     align-items: center;
 
+    width: $day-size;
+    height: $day-size;
+
     border: $border-width solid $border-color;
     background-color: $day-color;
+
     font-family: $font-stack;
     font-size: 30px;
 
-    transition: 0.5s;
-     
+    transition: transform 0.5s ease,
+                background-color 0.5s ease;
+
+    &::before {
+      content: attr(data-day);
+      position: absolute;
+      inset: 0;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-family: $font-stack;
+      font-size: 30px;
+    }
+
     @for $i from 1 through 31 {
       &:nth-child(#{$i})::before {
         content: '#{$i}';
@@ -42,10 +57,10 @@ body {
     }
   }
 
-  @each $i, $day in $days {
+  @each $index, $day in $days {
     &--start-day-#{$day} {
       > .calendar__day:first-child {
-        margin-left: ($i * ($day-size + $gap));
+        margin-left: ($index * ($day-size + $gap));
       }
     }
   }
