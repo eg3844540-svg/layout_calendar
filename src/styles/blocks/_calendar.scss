@@ -7,7 +7,8 @@
   box-sizing: border-box;
 
   width: ($day-size * $columns)
-       + ($gap * ($columns - 1)) +  20px;
+       + ($gap * ($columns - 1))
+       + ($calendar-padding * 2);
 
   overflow: visible;
 
@@ -21,8 +22,7 @@
     width: $day-size;
     height: $day-size;
 
-    border: 1px solid blanck;
-    background-color: $day-color;
+    border: $border-width solid $border-color;
 
     font-family: $font-stack;
     font-size: 30px;
