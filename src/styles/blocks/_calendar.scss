@@ -7,8 +7,7 @@
   box-sizing: border-box;
 
   width: ($day-size * $columns)
-       + ($gap * ($columns - 1))
-       + ($calendar-padding * 2);
+       + ($gap * ($columns - 1)) +  20px;
 
   overflow: visible;
 
