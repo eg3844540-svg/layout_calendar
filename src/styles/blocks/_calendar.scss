@@ -8,7 +8,7 @@
 
   width: ($day-size * $columns)
        + ($gap * ($columns - 1))
-       + ($calendar-padding * 2);
+       + 20px;
 
   overflow: visible;
 
